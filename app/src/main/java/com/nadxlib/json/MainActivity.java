@@ -47,8 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             list_all_recyclerview = findViewById(R.id.list);
-            //swipe=findViewById(R.id.swipe);
-            //cheack_list=findViewById(R.id.cheack_list);
+
 
             list_all_recyclerview.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
 
@@ -91,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
 
                                 JSONArray data = jsonObject.getJSONArray("data");
 
-                                Log.e("all_data", String.valueOf(jsonObject));
+                                Log.e("Responce From URL", String.valueOf(jsonObject));
+
                                 Log.e("all_data", String.valueOf(data));
 
 
@@ -100,14 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
                                 for (int i = 0; i < data.length(); i++) {
                                     Log.e("employee_name", data.get(i).toString());
-//                                    try {
-//                                        Log.e("employee_name", String.valueOf(data.getJSONObject(Integer.parseInt("employee_name"))));
-//
-//                                    } catch (Exception e) {
-//                                        e.printStackTrace();
-//                                    }
 
-
+                                    //getting all employees data
                                     JSONObject dat = (JSONObject) data.get(i);
 
                                     //RecyclerView Adapter

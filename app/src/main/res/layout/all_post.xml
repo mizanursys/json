@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/post_data"
+            android:id="@+id/emp_name"
             android:gravity="center"
             android:layout_gravity="center"
             android:background="#E3F2FD"

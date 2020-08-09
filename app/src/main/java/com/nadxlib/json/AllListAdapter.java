@@ -30,8 +30,7 @@ public class AllListAdapter extends RecyclerView.Adapter<AllListAdapter.AllDataV
     public AllListAdapter(Context mCtx, List<JSONObject> all_list) {
         this.mCtx = mCtx;
         this.all_list = all_list;
-//        int size=all_list.size();
-  //      String total_data= String.valueOf(size);
+
     }
 
     @Override
@@ -47,9 +46,9 @@ public class AllListAdapter extends RecyclerView.Adapter<AllListAdapter.AllDataV
             public boolean onLongClick(View view) {
                 int position=alldataViewHolder.getAdapterPosition();
                 Toast.makeText(mCtx,"Item at position "+position+" deleted",Toast.LENGTH_SHORT).show();
-                //  all_list.add((JSONObject) all_list);
+
                 notifyDataSetChanged();
-                //if(personModifier!=null){personModifier.onPersonDeleted(position);}
+
                 return true;
             }
         });
@@ -68,18 +67,7 @@ public class AllListAdapter extends RecyclerView.Adapter<AllListAdapter.AllDataV
 
 
 
-                holder.post_data.setText(list_jsonobject.getString("employee_name"));
-
-
-//            Log.e("name", list_jsonobject.getString(("name")));
-
-
-            String test =all_list.get(holder.getAdapterPosition()).getString("image");
-            String lastWord = String.valueOf(test.charAt(test.length() -1));
-            Log.e("Last Wod",lastWord);
-
-            holder.name.setText(list_jsonobject.getString("post_user_name"));
-            Log.e("name>>>>>>>>>", list_jsonobject.getString("post"));
+                holder.emp_name.setText(list_jsonobject.getString("employee_name"));
 
 
         } catch (JSONException e) {
@@ -107,30 +95,16 @@ public class AllListAdapter extends RecyclerView.Adapter<AllListAdapter.AllDataV
 
     class AllDataViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView post_data,name;
-        Button share,like;
-        ImageView post_image;
+        TextView emp_name;
+
 
         @SuppressLint("CutPasteId")
         public AllDataViewHolder(View itemView) {
             super(itemView);
 
-            post_data=itemView.findViewById(R.id.post_data);
+            emp_name=itemView.findViewById(R.id.emp_name);
 
 
-
-           AdapterView.OnItemSelectedListener countrySelectedListener = new AdapterView.OnItemSelectedListener() {
-
-                @Override
-                public void onItemSelected(AdapterView<?> spinner, View container,
-                                           int position, long id) {
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> arg0) {
-                    // TODO Auto-generated method stub
-                }
-            };
         }
 
         @Override
